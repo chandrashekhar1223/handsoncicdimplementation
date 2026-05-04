@@ -32,3 +32,4 @@ D:\OLD DATA\Chandrashekhar Naik\Practice\azcicdimplementation\obj\Debug\net8.0\r
 D:\OLD DATA\Chandrashekhar Naik\Practice\azcicdimplementation\obj\Debug\net8.0\azcicdimplementation.pdb
 D:\OLD DATA\Chandrashekhar Naik\Practice\azcicdimplementation\obj\Debug\net8.0\azcicdimplementation.genruntimeconfig.cache
 D:\OLD DATA\Chandrashekhar Naik\Practice\azcicdimplementation\obj\Debug\net8.0\ref\azcicdimplementation.dll
+D:\OLD DATA\Chandrashekhar Naik\Practice\azcicdimplementation\obj\Debug\net8.0\azcicdimplementation.sourcelink.json
