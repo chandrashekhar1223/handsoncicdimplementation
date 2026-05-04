@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("azcicdimplementation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+670f051875054c27e82addc3ab1b9e6ce35895ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8ef707a234ac216a03d095c5816b07c3b1a732b")]
 [assembly: System.Reflection.AssemblyProductAttribute("azcicdimplementation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("azcicdimplementation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
