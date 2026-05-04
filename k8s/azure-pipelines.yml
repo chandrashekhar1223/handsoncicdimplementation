@@ -1,0 +1,59 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  imageName: demoapp
+  acrName: demoacr12345
+  acrLoginServer: demoacr12345.azurecr.io
+
+steps:
+
+# =========================
+# 1. Install .NET SDK
+# =========================
+- task: UseDotNet@2
+  displayName: Install .NET SDK
+  inputs:
+    packageType: sdk
+    version: 8.x
+
+# =========================
+# 2. Build .NET Project
+# =========================
+- script: dotnet restore
+  displayName: Restore Dependencies
+
+- script: dotnet build --configuration Release
+  displayName: Build Application
+
+- script: dotnet publish -c Release -o publish
+  displayName: Publish Application
+
+# =========================
+# 3. Build & Push Docker Image to ACR
+# =========================
+- task: Docker@2
+  displayName: Build and Push Docker Image
+  inputs:
+    command: buildAndPush
+    repository: $(imageName)
+    dockerfile: Dockerfile
+    containerRegistry: ACRConnection
+    tags: |
+      v1
+      latest
+
+# =========================
+# 4. Deploy to AKS
+# =========================
+- task: KubernetesManifest@1
+  displayName: Deploy to AKS
+  inputs:
+    action: deploy
+    kubernetesServiceConnection: AKSConnection
+    manifests: |
+      k8s/deployment.yaml
+      k8s/service.yaml
